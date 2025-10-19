@@ -17,7 +17,7 @@ body {
   -webkit-overflow-scrolling: touch; /* smooth momentum on iOS */
   scroll-behavior: smooth;
   scroll-snap-type: y proximity; /* change to 'mandatory' if you want strict snapping */
-  padding: 2px 0;
+  padding: 0px 0;
 }
 
 /* Each image is a page */
@@ -25,7 +25,7 @@ body {
   display: block;
   width: min(100%, 900px); /* scale down on small screens, cap width on large */
   height: auto;
-  margin: 0 auto 2px; /* tighter vertical rhythm */
+  margin: 0 auto 0px; /* tighter vertical rhythm */
   border-radius: 2px;
   box-shadow: 0 8px 28px rgba(99, 206, 255, 0.45);
   scroll-snap-align: start; /* align top when snapping */
@@ -58,7 +58,7 @@ body {
 .countdown-wrapper {
   position: relative;
   width: min(100%, 900px);
-  margin: 0 auto 2px;
+  margin: 0 auto 0px;
   border-radius: 2px;
   overflow: hidden; /* clip overlay corners */
   box-shadow: 0 8px 28px rgba(99, 206, 255, 0.45);
