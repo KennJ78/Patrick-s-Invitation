@@ -1,0 +1,171 @@
+/* Global reset and base styles */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #91e0ff;
+  color: #fff;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Scroll container */
+.invitation-scroll {
+  height: 100dvh; /* full viewport height including mobile dynamic bars */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth momentum on iOS */
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity; /* change to 'mandatory' if you want strict snapping */
+  padding: 2px 0;
+}
+
+/* Each image is a page */
+.invitation-scroll img {
+  display: block;
+  width: min(100%, 900px); /* scale down on small screens, cap width on large */
+  height: auto;
+  margin: 0 auto 2px; /* tighter vertical rhythm */
+  border-radius: 2px;
+  box-shadow: 0 8px 28px rgba(99, 206, 255, 0.45);
+  scroll-snap-align: start; /* align top when snapping */
+  background: #111; /* in case image is loading */
+}
+
+@media (min-width: 1024px) {
+  .invitation-scroll {
+    padding: 12px 0;
+  }
+  .invitation-scroll img {
+    margin-bottom: 12px;
+  }
+}
+
+/* Reveal animation states */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(0.995);
+  transition: opacity 500ms ease, transform 600ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Countdown block styled like a page image */
+.countdown-wrapper {
+  position: relative;
+  width: min(100%, 900px);
+  margin: 0 auto 2px;
+  border-radius: 2px;
+  overflow: hidden; /* clip overlay corners */
+  box-shadow: 0 8px 28px rgba(99, 206, 255, 0.45);
+  scroll-snap-align: start;
+  background:#91e0ff;
+}
+
+.countdown-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.countdown-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.cd-item {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 6px;
+  min-width: 70px;
+}
+
+.cd-num {
+  font-size: clamp(28px, 4.5vw, 56px);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.cd-label {
+  font-size: clamp(10px, 1.6vw, 14px);
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  opacity: 0.9;
+}
+
+@media (min-width: 1024px) {
+  .countdown-wrapper { margin-bottom: 2px; }
+}
+
+  /* Thank You block styled like a page image */
+  .thankyou-wrapper {
+    position: relative;
+    width: min(100%, 900px);
+    margin: 0 auto 2px;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+    scroll-snap-align: start;
+    background: #111;
+  }
+
+  .thankyou-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .thankyou-overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 85px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.35));
+  }
+
+  .ty-title {
+    margin: 0 0 8px 0;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(50px, 8vw, 96px);
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.5);
+  }
+
+  .ty-sub {
+    margin: 0;
+    font-family: 'Playfair Display', ui-serif, Georgia, serif;
+    font-size: clamp(12px, 2.6vw, 20px);
+    color: rgba(255,255,255,0.95);
+    letter-spacing: 0.3px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+  }
+
+  @media (min-width: 1024px) {
+    .thankyou-wrapper { margin-bottom: 2px; }
+  }
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .invitation-scroll {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Patrick's 21st Birthday Invitation</title>
+    <link rel="preload" as="image" href="assets/1.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="invitation-scroll" aria-label="Invitation content">
+      <!-- Stack all pages/images of the invitation in numeric order -->
+      <img class="reveal" src="assets/1.jpg" alt="Invitation page 1" loading="eager" />
+      <!-- Countdown card placed after page 1 -->
+        <section class="countdown-wrapper reveal" aria-label="Countdown to October 25, 1 PM">
+        <img class="countdown-bg" src="assets/Time.jpg" alt="Countdown background" loading="eager" />
+        <div class="countdown-overlay" aria-live="polite">
+          <div class="cd-item"><span id="cd-days" class="cd-num">--</span><span class="cd-label">Days</span></div>
+          <div class="cd-item"><span id="cd-hours" class="cd-num">--</span><span class="cd-label">Hours</span></div>
+          <div class="cd-item"><span id="cd-mins" class="cd-num">--</span><span class="cd-label">Minutes</span></div>
+          <div class="cd-item"><span id="cd-secs" class="cd-num">--</span><span class="cd-label">Seconds</span></div>
+        </div>
+      </section>
+      <img class="reveal" src="assets/2.jpg" alt="Invitation page 2" loading="lazy" />
+      <img class="reveal" src="assets/3.jpg" alt="Invitation page 3" loading="lazy" />
+      <img class="reveal" src="assets/4.jpg" alt="Invitation page 4" loading="lazy" />
+      <img class="reveal" src="assets/5.jpg" alt="Invitation page 5" loading="lazy" />
+      <img class="reveal" src="assets/6.jpg" alt="Invitation page 6" loading="lazy" />
+      
+  
+    </main>
+    <script src="main.js" defer></script>
+  </body>
+</html>
